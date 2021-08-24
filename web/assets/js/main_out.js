@@ -221,7 +221,7 @@
     const WEBSOCKET_URL = null;
     const SKIN_URL = './skins/';
     const USE_HTTPS = 'https:' === window.location.protocol;
-    const EMPTY_NAME = 'An unnamed cell';
+    const EMPTY_NAME = 'An unnamed Rover';
     const QUADTREE_MAX_POINTS = 32;
     const CELL_POINTS_MIN = 5;
     const CELL_POINTS_MAX = 120;
@@ -631,11 +631,10 @@
 
     const settings = {
         nick: '',
-        skin: '',
-        gamemode: '',
+        skin: 'rovermaennchen',
         showSkins: true,
         showNames: true,
-        darkTheme: false,
+        darkTheme: true,
         showColor: true,
         showMass: false,
         _showChat: true,
@@ -649,8 +648,8 @@
         },
         showMinimap: true,
         showPosition: false,
-        showBorder: false,
-        showGrid: true,
+        showBorder: true,
+        showGrid: false,
         playSounds: false,
         soundsVolume: 0.5,
         moreZoom: false,
@@ -1723,7 +1722,7 @@
         if (div) {
             window.setserver(div[1]);
         } else {
-            window.setserver(byId('gamemode').value);
+            window.setserver('ogar.kosek.de:8080');
         }
         drawGame();
         Logger.info(`Init done in ${Date.now() - LOAD_START}ms`);
